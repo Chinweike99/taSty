@@ -30,7 +30,8 @@ import pizza from './pizza.png'
 import Risoles from './Risoles.png'
 import snackCover from './snackCover.png'
 import waitress from './waitress.png'
+import backgroundImage from './backgroundImage.png'
 
 export const assets = {
-    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolate, cookies, donouts, pizza, Risoles, snackCover, waitress
+    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolate, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage
 }

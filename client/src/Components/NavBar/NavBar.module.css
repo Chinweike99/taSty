@@ -1,0 +1,64 @@
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.logo{
+    font-family: "Rubik Wet Paint";
+    font-size: 2rem;
+    width: 150px;
+}
+
+.NavBar .navMenu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 20px;
+    color: #49557e;
+}
+.NavBar .navMenu li{
+    cursor: pointer;
+}
+
+.NavBar .navBarRight{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.NavBar button {
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 1px solid rgb(240, 136, 9);
+    font-size: 16px;
+    cursor: pointer;
+    color: #49557e;
+    transition: 0.3s;
+}
+.NavBar button:hover{
+    background: #fff4f2;
+}
+.active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+
+.NavBar li{
+    cursor: pointer;
+}
+
+ .searchIcon{
+    position: relative;
+ }
+
+ .searchIcon .dot{
+    position: absolute;
+    min-width: 8px;
+    min-height: 8px;
+    background: rgb(240, 136, 9);
+    border-radius: 5px;
+    top: -7px;
+    right: -8px;
+ }

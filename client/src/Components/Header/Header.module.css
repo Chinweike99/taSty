@@ -1,0 +1,66 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    position: relative;
+    color: #fff;
+
+    /* Background images with a gradient overlay to split them */
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+        /* Left background image */
+        url('../../assets/backgroundImage.png') no-repeat left, 
+        /* Right background image */
+        url('../../assets/waitress.png') no-repeat right;
+        background-size: 60% 100%, 60% 100%, 40% 100%; /* Define width for each image */
+}
+.headerContent{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    /* color: blck; */
+    max-width: 50%;
+    bottom: 25%;
+    left: 6vw;
+}
+
+.headerContent h2{
+    font-size: max(4vw, 22px);
+    font-family: "Rubik Wet Paint";
+    font-weight: 500;
+    animation: slide-in 3.6s;
+}
+
+  @keyframes slide-in {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.headerContent p{
+    animation: slide-in 2s;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+.headerContent button{
+    border: none;
+    color: #fff;
+    border: 3px solid rgb(240, 136, 9);
+    background: transparent;
+    font-weight: 600;
+    padding: 0.8vw 2vw;
+    font-size: max(1vw, 13px);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.headerContent button:hover{
+    transform: scale(1.02);
+}

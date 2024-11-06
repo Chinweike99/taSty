@@ -11,7 +11,7 @@
         url('../../assets/backgroundImage.png') no-repeat left, 
         /* Right background image */
         url('../../assets/waitress.png') no-repeat right;
-        background-size: 60% 100%, 60% 100%, 40% 100%; /* Define width for each image */
+        background-size: 60% 100%, 62% 100%, 40% 100%; /* Define width for each image */
 }
 .headerContent{
     position: absolute;
@@ -19,7 +19,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5vw;
-    /* color: blck; */
     max-width: 50%;
     bottom: 25%;
     left: 6vw;

@@ -23,7 +23,7 @@ import waiters from './waiters.png'
 import brownies from './brownies.png'
 import Burger from './Burger.png'
 import chips from './chips.png'
-import chocolate from './chocolate.png'
+import chocolateBiscuits from './chocolateBiscuits.png'
 import cookies from './cookies.png'
 import donouts from './donouts.png'
 import pizza from './pizza.png'
@@ -33,5 +33,20 @@ import waitress from './waitress.png'
 import backgroundImage from './backgroundImage.png'
 
 export const assets = {
-    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolate, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage
+    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolateBiscuits, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage
 }
+
+export const menu_list = [
+    {
+        name: "Nigerian",
+        image: NyamAfang
+    },
+    {
+        name: "Inter-continental",
+        image: IfriedCrab
+    },
+    {
+        name: "Snacks",
+        image: snackCover
+    }
+]

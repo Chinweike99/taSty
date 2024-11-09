@@ -1,0 +1,117 @@
+.foodItem{
+    width: 100%;
+    margin: auto;
+    box-shadow: -2px 2px 17px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px 2px 17px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 2px 17px 0px rgba(0,0,0,0.75);
+    transition: 0.3s;
+    animation: slide-in 3s;
+    border-radius: 15px 15px 0px 0px;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.imageContainer{
+    position: relative;
+}
+.imageContainer img{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    overflow: hidden;
+}
+
+.imageContainer button{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    background: var(--golden-color);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    font-size: 1rem;
+    z-index: 2;
+    cursor: pointer;
+}
+.imageContainer div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 8rem;
+    background: rgb(197, 202, 204);
+    border-radius: 25px;
+    /* padding: 0 0.3rem; */
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+.imageContainer div .remove{
+    background: red;
+    height: 2rem;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 15px 0 0 15px;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.imageContainer div p{
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.imageContainer div .add{
+    background: green;
+    color: #fff;
+    height: 2rem;
+    overflow: hidden;
+    border-radius: 0 15px 15px 0;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.foodInfo{
+    padding: 10px;
+}
+
+.foodRating .name{
+    font-size: var(--heading-font);
+    font-weight: 600;
+}
+.foodRating .foodDesc{
+    color: #676767;
+}
+.starDiv{
+    display: flex;
+    align-self: center;
+}
+
+.starDiv .star{
+    color: var(--golden-color);
+    font-size: 1.2rem;
+}
+.starDiv .star1{
+    font-size: 1.2rem;
+}
+.starContainer {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.starContainer p{
+    font-size: 1.5rem;
+    font-weight: 700;
+}

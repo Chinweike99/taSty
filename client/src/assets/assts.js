@@ -31,22 +31,27 @@ import Risoles from './Risoles.png'
 import snackCover from './snackCover.png'
 import waitress from './waitress.png'
 import backgroundImage from './backgroundImage.png'
+import all from './all.png'
 
 export const assets = {
-    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolateBiscuits, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage
+    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolateBiscuits, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage, all
 }
 
 export const menu_list = [
+    {
+        name: "All",
+        image: all
+    },
     {
         name: "Nigerian",
         image: NyamAfang
     },
     {
         name: "Inter-continental",
-        image: IfriedCrab
+        image: Iseabeas
     },
     {
-        name: "Snacks",
+        name: "Snack",
         image: snackCover
     }
 ]
@@ -82,7 +87,7 @@ export const foodList = [
         image: NegwusiEba,
         price: "6,500",
         description: "Experience the rich, savory delight of Egwusi paired with the smooth, hearty texture of Eba—a timeless duo that brings warmth and tradition to every bite.",
-        category: "Nigerian delicacy",
+        category: "Nigerian",
     },
     {
         _id: "5",
@@ -90,7 +95,7 @@ export const foodList = [
         image: Newedu,
         price: "4,300",
         description: "a luscious, nutrient-rich delight that complements any dish with its unique texture and irresistible flavor. Savory, fresh, and unforgettable.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "6",
@@ -98,7 +103,7 @@ export const foodList = [
         image: NfishPepperSoup,
         price: "6,000",
         description: "A fiery, flavorful delight, Fish Pepper-soup is the perfect balance of spice and satisfaction, guaranteed to warm both your heart and your soul.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "7",
@@ -106,7 +111,7 @@ export const foodList = [
         image: NfriedRice,
         price: "5,000",
         description: "Fried Rice is a delightful explosion of flavors in every bite—savor the perfect blend of spices, tender veggies, and a satisfying kick that makes every meal memorable.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "8",
@@ -146,7 +151,7 @@ export const foodList = [
         image: NgrilledMeatChicken,
         price: "15,500",
         description: "the perfect combination of crispy on the outside, tender on the inside, and irresistibly delicious with every bite.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "13",
@@ -154,7 +159,7 @@ export const foodList = [
         image: Njollof,
         price: "4,000",
         description: "A tantalizing burst of bold, smoky flavors in every bite, Jollof Rice is the ultimate comfort food that brings people together with its irresistible taste and vibrant, mouthwatering appeal.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "14",
@@ -162,7 +167,7 @@ export const foodList = [
         image: Nnkwobi,
         price: "10,000",
         description: "Nkwobi is the perfect indulgence for those who crave a taste of authentic Nigerian spice and tradition.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
     {
         _id: "15",
@@ -226,7 +231,7 @@ export const foodList = [
         image: Nogbono,
         price: "6,500",
         description: "Indulge in the rich, hearty goodness of Ogbono Soup—packed with bold flavors and a silky texture that will leave you craving more with every bite.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -235,7 +240,7 @@ export const foodList = [
         image: NokroSoup,
         price: "5,500",
         description: "A deliciously satisfying blend of rich flavors and silky textures, Okro Soup is the perfect harmony of spice and comfort in every bit.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -244,7 +249,7 @@ export const foodList = [
         image: NricceBeans,
         price: "2,000",
         description: "Rice & Beans is the perfect balance of rich textures and bold taste, ideal for those craving a wholesome, fulfilling meal.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -253,7 +258,7 @@ export const foodList = [
         image: NricePlantain,
         price: "4,000",
         description: "A dynamic duo that blends the savory goodness of perfectly cooked rice with the sweet, crispy allure of golden plantains",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -262,7 +267,7 @@ export const foodList = [
         image: NwhiteSoup,
         price: "8,000",
         description: "White Soup is the perfect comfort dish, bursting with rich flavors that leave you craving more.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -271,7 +276,7 @@ export const foodList = [
         image: NyamAfang,
         price: "6,000",
         description: "A luscious, hearty masterpiece that packs bold flavors and an irresistible richness,",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {
@@ -280,7 +285,7 @@ export const foodList = [
         image: vegetableSoup,
         price: "7,000",
         description: "A wholesome, hearty delight packed with vibrant flavors and nourishing goodness, Vegetable Soup is the perfect balance of freshness and comfort in every bowl.",
-        category: "Nigerian delicacy"
+        category: "Nigerian"
     },
 
     {

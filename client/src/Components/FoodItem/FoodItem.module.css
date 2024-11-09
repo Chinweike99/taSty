@@ -7,6 +7,7 @@
     transition: 0.3s;
     animation: slide-in 3s;
     border-radius: 15px 15px 0px 0px;
+    overflow: hidden;
 }
 
 @keyframes slide-in {
@@ -27,6 +28,12 @@
     width: 100%;
     border-radius: 15px 15px 0px 0px;
     overflow: hidden;
+    transition: 0.7s ease-in-out;
+}
+
+.imageContainer img:hover{
+    transform: scale(1.07);
+    cursor: pointer;
 }
 
 .imageContainer button{

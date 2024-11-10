@@ -1,0 +1,41 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: var(--dark-background);
+    align-items: center;
+    gap: 10px;
+    padding: 20px 2vw;
+    padding-top: 2rem;
+    margin-top: 6rem;
+}
+
+.footer .footerContent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+}
+.logo{
+    font-family: "Rubik Wet Paint";
+    font-size: 1.3rem;
+    width: 150px;
+}
+.leftContent, .middleContent, .rightContent{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+.leftContent li, .middleContent li, .rightContent li{
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer hr{
+    width: 100%;
+    height: 2px;
+    box-shadow: -2px 2px 17px 0px rgba(231, 227, 227, 0.75);
+-webkit-box-shadow: -2px 2px 17px 0px rgba(234, 231, 231, 0.75);
+-moz-box-shadow: -2px 2px 17px 0px rgba(235, 230, 230, 0.75);
+}

@@ -9,7 +9,7 @@ import { StoreContext } from '../../Context/StoreContext';
 
 
 const FoodItem = ({id, name, image,price, description, category}) => {
-  const [itemCount, setCount] = useState(0);
+  // const [itemCount, setCount] = useState(0);
   const {cartItems, setCartItems, addTocart, removeFromCart} = useContext(StoreContext);
 
   return (
@@ -30,7 +30,7 @@ const FoodItem = ({id, name, image,price, description, category}) => {
             !cartItems[id] ? <button  onClick={()=>addTocart(id)}>Add</button> 
             : <div>
               <RemoveIcon className={styles.remove} onClick={()=>removeFromCart(id)}/>
-              <p>{cartItems <= 1 ? `${cartItems[id]} Portion` : `${cartItems[id]} Portions`}</p>
+                <p>{cartItems[id] < 2 ? `${cartItems[id]} Portion` : `${cartItems[id]} Portions`}</p>
               <AddIcon className={styles.add} onClick={()=>addTocart(id)}/>
             </div>
           }

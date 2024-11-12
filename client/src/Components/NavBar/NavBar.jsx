@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({setShowlogin}) => {
     const [menu, setMenu] = useState("home")
     const[menuList, setMenuList] = useState(false)
 
@@ -40,7 +40,7 @@ const NavBar = () => {
                 <ShoppingCartIcon />
                 <div className={styles.dot}></div>
             </div>
-            <button>Sign in</button>
+            <button onClick={()=>setShowlogin(true)}>Sign in</button>
         </div>
     </div>
   )

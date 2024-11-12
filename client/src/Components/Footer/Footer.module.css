@@ -39,3 +39,12 @@
 -webkit-box-shadow: -2px 2px 17px 0px rgba(234, 231, 231, 0.75);
 -moz-box-shadow: -2px 2px 17px 0px rgba(235, 230, 230, 0.75);
 }
+
+
+
+@media screen and (max-width: 630px) {
+    .footer .footerContent{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

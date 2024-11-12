@@ -3,12 +3,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0px;
+    position: relative;
 }
 
 .logo{
     font-family: "Rubik Wet Paint";
     font-size: 2rem;
-    width: 150px;
+    width: 120px;
 }
 
 .NavBar .navMenu{
@@ -62,3 +63,53 @@
     top: -7px;
     right: -8px;
  }
+ .NavBar .menuIcon{
+    font-size: 1.9rem;
+    display: none;
+    color: var(--golden-color);
+    margin: 0 10px;
+ }
+
+.NavBar .showmenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    gap: 1.3rem;
+    right: -10px;
+    height: 100vh;
+    top: 0;
+    padding-top: 4rem;
+    width: 100vw;
+    background: #fff;
+    z-index: 99;
+    list-style: none;
+    display: none;
+}
+
+.NavBar .showmenu p{
+    align-self: flex-end;
+    margin-right: 15%;
+    font-size: 4rem;
+}
+
+.NavBar .showmenu li{
+    font-size: 3.5rem;
+}
+
+@media screen and (max-width: 749px) {
+    .NavBar .menuIcon{
+        display: block;
+    }
+    .NavBar .navMenu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .searchMedia, .searchIcon{
+        display: none;
+    }
+}
+

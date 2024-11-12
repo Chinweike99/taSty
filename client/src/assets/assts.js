@@ -32,9 +32,11 @@ import snackCover from './snackCover.png'
 import waitress from './waitress.png'
 import backgroundImage from './backgroundImage.png'
 import all from './all.png'
+import appstore from './appstore.png'
+import googlestore from './googlestore.png'
 
 export const assets = {
-    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolateBiscuits, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage, all
+    IfishDish, IfishSalad,IfriedCrab,IfriedRiceEgg,Iseabeas,Isommelierwine,Itofustir, NegwusiEba, Newedu, NfishPepperSoup, NfriedRice, NgrilledMeatChicken, Njollof, Nnkwobi, Nogbono, NokroSoup, NricceBeans, NricePlantain, NwhiteSoup, NyamAfang, vegetableSoup, waiters, brownies, Burger, chips, chocolateBiscuits, cookies, donouts, pizza, Risoles, snackCover, waitress, backgroundImage, all, appstore, googlestore
 }
 
 export const menu_list = [

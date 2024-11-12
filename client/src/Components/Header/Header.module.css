@@ -63,3 +63,16 @@
 .headerContent button:hover{
     transform: scale(1.02);
 }
+
+@media screen and (max-width: 535px) {
+
+    .header{
+        height: 55vw;
+    }
+    .headerContent{
+        max-width: 70%;
+    }
+    .header .headerContent p{
+        display: none;
+    }
+}

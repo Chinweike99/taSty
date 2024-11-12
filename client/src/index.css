@@ -6,3 +6,7 @@
     --golden-color: rgb(240, 136, 9);
     --dark-background: black;
 }
+
+*{
+    scroll-behavior: smooth;
+}

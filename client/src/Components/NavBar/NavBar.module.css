@@ -2,14 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px;
-    position: relative;
+    padding: 20px 2rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
 }
 
 .logo{
     font-family: "Rubik Wet Paint";
     font-size: 2rem;
-    width: 120px;
 }
 
 .NavBar .navMenu{
@@ -19,7 +21,7 @@
     font-size: 20px;
     color: #49557e;
 }
-.NavBar .navMenu li{
+.NavBar .navMenu a{
     cursor: pointer;
 }
 
@@ -46,7 +48,7 @@
     border-bottom: 2px solid #49557e;
 }
 
-.NavBar li{
+.NavBar a{
     cursor: pointer;
 }
 
@@ -108,7 +110,10 @@
 }
 
 @media screen and (max-width: 444px) {
-    .searchMedia, .searchIcon{
+    .searchIcon{
+        display: none;
+    }
+    .searchMedia{
         display: none;
     }
 }

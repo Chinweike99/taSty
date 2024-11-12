@@ -48,3 +48,10 @@ hr{
     height: 2px;
     margin: 10px 0;
 }
+
+@media screen and (max-width: 600px) {
+    .exploreMenu .exploreText{
+        max-width: 100%;
+        color: #534d4d;
+    }
+}

@@ -35,7 +35,7 @@ const NavBar = ({setShowlogin}) => {
         </ul>
 
         <div className={styles.navBarRight}>
-            <SearchIcon className={styles.searchMedia}/>
+            {/* <SearchIcon className={styles.searchMedia}/> */}
             <div className={styles.searchIcon}>
                 <Link to={'/cart'}>
                     <ShoppingCartIcon />

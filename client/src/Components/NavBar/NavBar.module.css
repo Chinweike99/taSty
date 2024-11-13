@@ -110,9 +110,11 @@
 }
 
 @media screen and (max-width: 444px) {
-    .searchMedia{
+    /* .searchMedia{
         display: none;
-        visibility: hidden;
+    } */
+    .logo{
+        font-size: 1.2rem;
     }
 }
 

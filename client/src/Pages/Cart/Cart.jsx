@@ -25,18 +25,41 @@ const Cart = () => {
             if(cartItems[item._id]>0){
              
               return(
-                <div className={styles.cartItems} key={index}>
-                  <img src={item.image} alt="" />
+                <div className={styles.cartItemsItem} key={index}>
+                  <img src={item.image} alt=""/>
                   <p>{item.name}</p>
                   <p>{money} {new Intl.NumberFormat('en-US').format (item.price)}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>{money} {new Intl.NumberFormat('en-US').format ((item.price) * (cartItems[item._id]))}</p>
-                  <DeleteIcon/>
+                  <span onClick={()=>removeFromCart(item._id)}>delete</span>
                 </div>
               )
             }
           })
         }
+      </div>
+      <div className={styles.cartBottom}>
+        <div className={styles.cartTotal}>
+          <h2>Total amount</h2>
+          <div >
+            <div className={styles.totalDetails}>
+              <p>Subtotal</p>
+              <p>{money} {0}</p>
+            </div>
+            <hr />
+            <div className={styles.totalDetails}>
+              <p>Delivery charge</p>
+              <p>{money} {0}</p>
+            </div>
+            <hr />
+            <div className={styles.totalDetails}>
+              <p>Total</p>
+              <p>{money} {0}</p>
+            </div>
+          </div>
+          <button>Make purchase</button>
+
+        </div>
       </div>
     </div>
   )

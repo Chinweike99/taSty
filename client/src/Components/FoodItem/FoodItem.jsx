@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import styles from './FoodItem.module.css';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
@@ -10,7 +10,7 @@ import { StoreContext } from '../../Context/StoreContext';
 
 const FoodItem = ({id, name, image,price, description, category}) => {
   // const [itemCount, setCount] = useState(0);
-  const {cartItems, setCartItems, addTocart, removeFromCart} = useContext(StoreContext);
+  const {cartItems, money, addTocart, removeFromCart} = useContext(StoreContext);
 
   return (
     <div className={styles.foodItem}>
@@ -45,7 +45,7 @@ const FoodItem = ({id, name, image,price, description, category}) => {
             <div className={styles.starDiv}>
               <StarRateIcon className={styles.star}/> <StarRateIcon className={styles.star}/> <StarRateIcon className={styles.star}/> <StarRateIcon className={styles.star}/> <StarBorderIcon className={styles.star1}/>
             </div>
-            <p className={styles.foodPrice}>₦ {price}</p>
+            <p className={styles.foodPrice}>{money}{new Intl.NumberFormat('en-US').format (price)}</p>
           </div>
           
         </div>

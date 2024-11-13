@@ -3,6 +3,7 @@ import { foodList } from "../assets/assts";
 
 
 export const StoreContext = createContext(null);
+const money = "₦";
 
 const StoreContextProvider = (props) => {
     
@@ -31,7 +32,7 @@ const StoreContextProvider = (props) => {
     }, [cartItems])
 
     const contextValue = {
-        foodList, cartItems, setCartItems, addTocart, removeFromCart
+        foodList, cartItems, setCartItems, addTocart, removeFromCart, money
     }
     return (
         <StoreContext.Provider value={contextValue}>

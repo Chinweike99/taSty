@@ -110,11 +110,9 @@
 }
 
 @media screen and (max-width: 444px) {
-    .searchIcon{
-        display: none;
-    }
     .searchMedia{
         display: none;
+        visibility: hidden;
     }
 }
 

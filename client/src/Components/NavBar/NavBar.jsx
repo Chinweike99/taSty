@@ -12,9 +12,9 @@ const NavBar = ({setShowlogin}) => {
 
   return (
     <div className={styles.NavBar}>
-        <div className={styles.logo}>
+        <Link to={'/'} className={styles.logo}>
             <p>taS😋ty</p>
-        </div>
+        </Link>
         
 
         <ul className={styles.navMenu}>
@@ -37,7 +37,10 @@ const NavBar = ({setShowlogin}) => {
         <div className={styles.navBarRight}>
             <SearchIcon className={styles.searchMedia}/>
             <div className={styles.searchIcon}>
-                <ShoppingCartIcon />
+                <Link to={'/cart'}>
+                    <ShoppingCartIcon />
+                </Link>
+                
                 <div className={styles.dot}></div>
             </div>
             <button onClick={()=>setShowlogin(true)}>Sign in</button>

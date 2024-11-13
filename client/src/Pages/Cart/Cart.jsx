@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const Cart = () => {
 
-  const {foodList, cartItems, money, removeFromCart} = useContext(StoreContext)
+  const {foodList, cartItems, money, removeFromCart, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext)
 
   return (
     <div className={styles.cart}>
@@ -28,9 +28,9 @@ const Cart = () => {
                 <div className={styles.cartItemsItem} key={index}>
                   <img src={item.image} alt=""/>
                   <p>{item.name}</p>
-                  <p>{money} {new Intl.NumberFormat('en-US').format (item.price)}</p>
+                  <p>{money} {amountSeperator (item.price)}</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>{money} {new Intl.NumberFormat('en-US').format ((item.price) * (cartItems[item._id]))}</p>
+                  <p>{money} {amountSeperator ((item.price) * (cartItems[item._id]))}</p>
                   <span onClick={()=>removeFromCart(item._id)}>delete</span>
                 </div>
               )
@@ -44,17 +44,17 @@ const Cart = () => {
           <div >
             <div className={styles.totalDetails}>
               <p>Subtotal</p>
-              <p>{money} {0}</p>
+              <p>{money} {amountSeperator(totalCartAmount())}</p>
             </div>
             <hr />
             <div className={styles.totalDetails}>
               <p>Delivery charge</p>
-              <p>{money} {0}</p>
+              <p>{money} {amountSeperator(delivery)}</p>
             </div>
             <hr />
             <div className={styles.totalDetails}>
               <p>Total</p>
-              <p>{money} {0}</p>
+              <p className={styles.totalPrice}>{money} {amountSeperator (totalCartAmount() + delivery)}</p>
             </div>
           </div>
           <button>Make purchase</button>

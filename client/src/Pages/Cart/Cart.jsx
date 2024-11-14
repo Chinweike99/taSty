@@ -1,11 +1,14 @@
 import React, { useContext } from 'react'
 import styles from './Cart.module.css'
 import { StoreContext } from '../../Context/StoreContext'
-import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom'
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 const Cart = () => {
 
   const {foodList, cartItems, money, removeFromCart, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext)
+
+  const navigate = useNavigate();
 
   return (
     <div className={styles.cart}>
@@ -57,7 +60,7 @@ const Cart = () => {
               <p className={styles.totalPrice}>{money} {amountSeperator (totalCartAmount() + delivery)}</p>
             </div>
           </div>
-          <button>Make purchase</button>
+          <button onClick={()=>navigate('/placeorder')}>Make purchase</button>
 
         </div>
       </div>

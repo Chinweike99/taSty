@@ -103,3 +103,10 @@
     font-weight: 800;
     text-decoration: underline;
  }
+
+
+ @media screen and (max-width: 385px) {
+    .cartItemsItem p{
+        font-size: 0.8rem;
+    }
+ }

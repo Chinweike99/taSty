@@ -22,10 +22,12 @@ const LoginPage = ({setShowlogin}) => {
             </div>
             <button>{current === "Sign up" ? "Create account" : "Login"}</button>
 
+             {current !== "Login" ?    
             <div className={styles.loginCondition}>
                 <input type="checkbox" required/>
-                <p>By continuing you agree to our privacy policy</p>
+                <span style={{fontSize: "0.7rem"}}> <i>By continuing you agree to our privacy policy </i></span>
             </div>
+            : null}
             
             {current === "Login" ? 
             <p>Create a new account. <small onClick={()=>setCurrent("Sign up")}>click here</small></p>

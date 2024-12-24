@@ -1,11 +1,15 @@
+
 .login{
     position: absolute;
     z-index: 1001;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 410rem;
     background: #00000090;
     backdrop-filter: blur(2px);
     display: grid;
+    padding-bottom: 340rem;
+    left: 0;
+
 }
 
 .login .loginContainer{
@@ -99,3 +103,17 @@ small{
     font-family: "Rubik Wet Paint";
 }
 
+
+@media screen and (max-width: 1000px) {
+    .login{
+        height: 580rem;
+        padding-bottom: 510rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login{
+        height: 1080rem;
+        padding-bottom: 640rem;
+    }
+}

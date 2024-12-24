@@ -1,5 +1,84 @@
+.placeOrder{
+    padding: 20px 2rem;
+}
 form{
     display: flex;
     justify-content: space-between;
     gap: 50px;
+}
+
+.placeOrderLeft{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1.6px solid var(--golden-color);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+-webkit-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+-moz-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+}
+.placeOrderLeft div{
+    width: 100%;
+    display: flex;
+}
+.placeOrderLeft input{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    padding: 0.4rem;
+    outline: none;
+}
+
+.placeOrderLeft input:focus{
+    border: solid 1.3px var(--golden-color);
+    box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.75);
+}
+.placeOrderLeft div{
+    /* width: 100%; */
+    display: flex;
+    gap: 8px;
+}
+.placeOrder h2{
+    margin-bottom: 1.5rem;
+    font-family: "Rubik Wet Paint";
+    text-decoration: underline;
+}
+
+
+
+/* Right side**************************** */
+
+.placeOrderRight{
+    width: 50%;
+    border: 1.6px solid var(--golden-color);
+    border-radius: 0.4rem;
+    padding: 1rem 1.6rem;
+    box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+-webkit-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+-moz-box-shadow: 2px 1px 15px 0px rgba(0,0,0,0.55);
+}
+
+ button{
+    border: none;
+    background: var(--golden-color);
+    align-self: flex-start;
+    width: max(10vw, 150px);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 1rem auto;
+    padding: 8px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Alegreya";
+    transition: 0.5s;
+}
+
+ button:hover{
+    background: green;
+    color: #fff;
+    transform: scale(1.04);
 }

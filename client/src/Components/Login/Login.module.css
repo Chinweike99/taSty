@@ -14,13 +14,13 @@
 
 .login .loginContainer{
     place-self: center;
-    width: max(23vw, 330px);
+    width: max(40px, 430px);
     /* color: #fff; */
     background: white;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 4rem 2.3rem;
+    padding: 3rem 2.3rem;
     border-radius: 1rem;
     animation: slide-in 0.8s;
 }

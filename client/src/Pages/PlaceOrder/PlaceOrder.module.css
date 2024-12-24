@@ -82,3 +82,19 @@ form{
     color: #fff;
     transform: scale(1.04);
 }
+
+.cartTotal .totalDetails{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+}
+
+
+@media screen and (max-width: 680px) {
+    form{
+        flex-direction: column;
+    }
+    .placeOrderLeft, .placeOrderRight{
+        width: 100%;
+    }
+}

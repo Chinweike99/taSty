@@ -42,6 +42,7 @@
 }
 .NavBar button:hover{
     background: #fff4f2;
+    color: black;
 }
 .active{
     padding-bottom: 2px;

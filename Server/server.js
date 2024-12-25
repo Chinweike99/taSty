@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors'
 import { connectDB } from './configurations/DB.js';
+import foodRouter from './Routes/foodRoutes.js';
 // Second line: retryWrites=true&w=majority&appName=Cluster0
 
 //Database connection
@@ -13,6 +14,9 @@ const PORT = 3100
 //middleware
 app.use(express.json())
 app.use(cors())
+
+// api endpoints
+app.use("/api/food", foodRouter)
 
 
 app.get('/', (req, res) => {

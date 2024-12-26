@@ -1,5 +1,6 @@
 // 
 
+import { error } from "console";
 import foodModel from "../models/foodModel.js";
 import fs from "fs";
 
@@ -44,17 +45,26 @@ const foodList = async(req, res)=>{
 // Remove from list
 const removeFood = async(req, res) => {
     try {
-        const {id} = req.params
-        const remove = await foodModel.deleteOne({_id: id});
-
-        if(remove.deletedCount === 0){
+        const {id} = req.body
+        // const remove = await foodModel.deleteOne({_id: id});
+        const food = await foodModel.findById(id);// Find by ID
+        if(!food){
             return res.status(404).json({message: "Food not found"})
         }
 
-        res.json({message: "deleted"})
+        // Delete associated image file
+        fs.unlink(`uploads/${food.image}`, ()=>{
+            if(error){
+                console.error(error.message)
+            }
+        });
+
+        //Delete the associated document.
+        await foodModel.findByIdAndDelete(id);
+        res.json({message: "Food deleted"})
     } catch (error) {
         console.log(error);
-        res.json({messag: error.messag})
+        res.json({messag: error.message})
     }
 }
 

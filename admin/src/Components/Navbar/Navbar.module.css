@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo p{
+    font-family: "Rubik Wet Paint";
+    font-size: 1.5rem;
+    margin-bottom: -0.2rem;
+}
+.logo small{
+    font-size: 14px;
+}
+
+.navbar img{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}

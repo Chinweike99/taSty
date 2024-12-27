@@ -2,17 +2,50 @@ import React from "react";
 import styles from "./Add.module.css";
 import { assets } from "../../assets/assets";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Add = () => {
+ const [image, setImgage] = useState(false)
+ const [data, setData] = useState({
+    name: "",
+    description: "",
+    category: "Nigerian",
+    price: ""
+ })
+
+ const handleChange = (e)=>{
+    const name = e.target.name;
+    const value = e.target.value;
+    setData(data=>({...data, [name]: value}))
+ }
+
+ // API to submit data to backend
+ // FormData: primarily used for sending form data via HTTP requests, especially when working with file uploads.
+ const handleSubmit = async(e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("category", data.category);
+    formData.append("price", data.price);
+ }
+
+
+ useEffect(() => {
+    console.log(data)
+ }, [data]);
+
+
   return (
     <div className={styles.addFood}>
-      <form className={styles.flexCol}>
+      <form className={styles.flexCol} onSubmit={handleSubmit}>
         <div className={styles.foodImage}>
           <p>upload image</p>
           <label htmlFor="image">
-            <img src={assets.defaultProfile} alt="" />
+            <img src={image?URL.createObjectURL(image): assets.defaultProfile} alt="" />
           </label>
-          <input type="file" id="image" hidden required />
+          <input onChange={(e)=>setImgage(e.target.files[0])} type="file" id="image" hidden required />
         </div>
 
         <div className={styles.rightSide}>
@@ -23,6 +56,8 @@ const Add = () => {
               name="name"
               placeholder="Name of food"
               required
+              onChange={handleChange}
+              value={data.name}
             />
           </div>
 
@@ -34,15 +69,17 @@ const Add = () => {
               rows={"6"}
               placeholder="Describe your product"
               required
+              onChange={handleChange}
+              value={data.description}
             />
           </div>
 
           <div className={styles.priceCategory}>
             <div className={styles.category}>
               <p>Product Category</p>
-              <select name="category"  >
-                <option >Choose category</option>
-                <option value="All">All</option>
+              <select name="category"  onChange={handleChange} value={data.category}>
+                {/* <option >Choose category</option>
+                <option value="All">All</option> */}
                 <option value="Nigerian"> Nigerian delicacies</option>
                 <option value="Inter-continental">
                   Inter-continental foods
@@ -58,6 +95,8 @@ const Add = () => {
                 name="price"
                 placeholder="Cost of product"
                 required
+                onChange={handleChange}
+                value={data.price}
               />
             </div>
           </div>

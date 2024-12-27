@@ -1,0 +1,20 @@
+.sidebar{
+  padding: 1rem ;
+  border-right: 1px solid gray;
+  position: fixed;
+  height: 100vh;
+  bottom: 0;
+  top: 5.2rem;
+  width: 9rem;
+  box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
+}
+.sidebar .options{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    /* font-size: 0.8rem; */
+    font-size: var(--small-font);
+    margin-bottom: 0.3rem;
+}

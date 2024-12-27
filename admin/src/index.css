@@ -22,3 +22,16 @@ hr{
   height: 1px;
   background-color: #a9a9a9;
 } */
+:root{
+  --small-font: 1rem;
+  --heading-font: 1.4rem;
+
+  
+  --golden-color: rgb(240, 136, 9);
+  --dark-background: black;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+ 

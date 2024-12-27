@@ -3,6 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
 }
 
 .logo p{
@@ -14,6 +19,12 @@
     font-size: 14px;
 }
 
+.navbar .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
 .navbar img{
     height: 3rem;
     width: 3rem;

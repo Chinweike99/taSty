@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <hr />
+      {/* <hr /> */}
       <div className='app'>
         <Sidebar />
       </div>

@@ -9,7 +9,10 @@ const Navbar = () => {
         <p>taS😋ty</p>
         <small>Admin panel..</small>
       </a>
-      <img src={assets.profileImage_2} alt="profile_image" />
+      <div className={styles.profile}>
+        <img src={assets.profileImage_2} alt="profile_image" />
+        <small>admin</small>
+      </div>
     </div>
   );
 };

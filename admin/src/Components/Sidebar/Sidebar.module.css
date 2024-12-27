@@ -1,20 +1,39 @@
-.sidebar{
-  padding: 1rem ;
-  border-right: 1px solid gray;
+.sidebar {
+  padding: 1rem;
+  border-right: none;
   position: fixed;
   height: 100vh;
   bottom: 0;
-  top: 5.2rem;
-  width: 9rem;
-  box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
--webkit-box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
--moz-box-shadow: -1px 1px 12px -1px rgba(0,0,0,0.75);
+  top: 6.33rem;
+  width: 15%;
+  font-size: max(1vw, 14px);
+  box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
 }
-.sidebar .options{
+.sidebar .options {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  /* font-size: var(--small-font); */
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.sidebar .options:hover {
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 820px) {
+  .sidebar {
     display: flex;
-    gap: 3px;
+    flex-direction: column;
     align-items: center;
-    /* font-size: 0.8rem; */
-    font-size: var(--small-font);
-    margin-bottom: 0.3rem;
+    padding: 1rem 2rem;
+  }
+  .sidebar .options span {
+    display: none;
+  }
 }

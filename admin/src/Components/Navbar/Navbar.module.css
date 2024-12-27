@@ -5,6 +5,8 @@
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
+    z-index: 5;
+    background: #fdfdfd;
     box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 12px -1px rgba(0, 0, 0, 0.75);

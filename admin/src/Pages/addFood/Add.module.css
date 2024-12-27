@@ -1,4 +1,96 @@
-.addFood{
-    margin-left: 16%;
-    z-index: 2;
+.addFood {
+  margin-left: 16%;
+  z-index: 2;
+  width: 100%;
+  font-size: var(--small-font);
+}
+.flexCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 3rem;
+}
+
+.foodImage {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+  -webkit-box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+  -moz-box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+}
+
+.foodImage img {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 0.4rem;
+}
+
+/* RightSide */
+.rightSide {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  /* padding: ; */
+  box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+  -webkit-box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+  -moz-box-shadow: -1px 0px 5px 5px rgba(212, 201, 191, 0.75);
+}
+
+.flexCol div {
+  width: 100%;
+  /* background: lightblue; */
+  padding: 5px;
+  border: solid 1px grey;
+  border-radius: 6px;
+}
+
+.rightSide div {
+  border: none;
+}
+
+.flexCol div input,
+select,
+textarea {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 6px;
+  padding: 0 4px;
+}
+
+.flexCol div textarea {
+  height: 3rem;
+}
+
+.rightSide .priceCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.rightSide .addButton {
+  height: 2rem;
+  margin: 1rem 4%;
+  background: var(--golden-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.rightSide .addButton:hover {
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 1000px) {
+    .flexCol{
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+    }
 }

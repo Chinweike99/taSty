@@ -3,7 +3,9 @@ import styles from './List.module.css'
 
 const List = () => {
   return (
-    <div>List</div>
+    <div className={styles.foodList}>
+        List
+    </div>
   )
 }
 

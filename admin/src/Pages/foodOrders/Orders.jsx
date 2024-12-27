@@ -3,7 +3,9 @@ import styles from './Orders.module.css'
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <div className={styles.orders}>
+        Orders
+    </div>
   )
 }
 

@@ -36,6 +36,10 @@ const Add = () => {
     formData.append("price", data.price);
     formData.append("image", image)
 
+    // if(!image){
+    //   toast.error(success.message)
+    // }
+
     const sendData = await axios.post(`${addFoodUrl}/api/food/add`, formData);
     if(sendData.data.success){
       setData({

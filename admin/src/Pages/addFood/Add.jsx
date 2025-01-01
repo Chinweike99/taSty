@@ -45,10 +45,10 @@ const Add = () => {
         price: ""
      })
       setImgage(false);
-      toast.success("Product added successfully");
+      toast.success(sendData.data.message);
 
     }else{
-      toast.error("Food not added ..")
+      toast.error(sendData.data.message)
     }
  }
 

@@ -31,6 +31,13 @@ const List = () => {
   return (
     <div className={styles.foodList}>
       <h3>List of food</h3>
+      <div className={styles.listTitle}>
+        <b>image</b>
+        <b>name</b>
+        <b>category</b>
+        <b>price</b>
+        <b>Action</b>
+      </div>
       {foodList.length > 0 ? (
         foodList.map((food, index) => {
           return (
@@ -38,7 +45,7 @@ const List = () => {
               <img src={`${listUrl}/images/`+food.image} alt="" />
               <p>{food.name}</p>
               <p>{food.category}</p>
-              <p>{food.description}</p>
+              {/* <p>{food.description}</p> */}
               <p>₦ {amountSeperator(food.price)}</p>
               <p>X</p>
             </div>

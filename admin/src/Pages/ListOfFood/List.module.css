@@ -1,8 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap');
+
+
+
 .foodList{
     margin-left: 16%;
     z-index: 2;
+    width: 100%;
 }
 
-.listTable{
-    
+.listTable, .listTitle{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid gray;
+    width: 100%;
+    /* margin-bottom: 1rem; */
+}
+.listTitle{
+    background: var(--golden-color);
+}
+.listTitle b{
+    font-size: 1.3rem;
+    font-family: "Alegreya";
+    color: #fff;
+}
+.listTable img{
+    width: 6rem;
+    height: 9rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.listTable img:hover{
+    transform: scale(1.08);
 }

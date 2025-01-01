@@ -26,6 +26,7 @@
   border-radius: 20px;
   margin-top: 0.4rem;
   height: 50vh;
+  cursor: pointer;
 }
 
 /* RightSide */

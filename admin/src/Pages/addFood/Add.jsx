@@ -4,6 +4,9 @@ import { assets } from "../../assets/assets";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { useState } from "react";
 import { useEffect } from "react";
+import axios from "axios"
+import { toast} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 const Add = () => {
  const [image, setImgage] = useState(false)
@@ -23,14 +26,31 @@ const Add = () => {
  // API to submit data to backend
  // FormData: primarily used for sending form data via HTTP requests, especially when working with file uploads.
  const handleSubmit = async(e) => {
+    const addFoodUrl = "http://localhost:3100"
+
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("description", data.description);
     formData.append("category", data.category);
     formData.append("price", data.price);
- }
+    formData.append("image", image)
 
+    const sendData = await axios.post(`${addFoodUrl}/api/food/add`, formData);
+    if(sendData.data.success){
+      setData({
+        name: "",
+        description: "",
+        category: "Nigerian",
+        price: ""
+     })
+      setImgage(false);
+      toast.success("Product added successfully");
+
+    }else{
+      toast.error("Food not added ..")
+    }
+ }
 
  useEffect(() => {
     console.log(data)
@@ -39,11 +59,12 @@ const Add = () => {
 
   return (
     <div className={styles.addFood}>
+      {/* <ToastContainer position="top-right" autoClose={3000} style={{zIndex: "1001"}}/> */}
       <form className={styles.flexCol} onSubmit={handleSubmit}>
         <div className={styles.foodImage}>
           <p>upload image</p>
           <label htmlFor="image">
-            <img src={image?URL.createObjectURL(image): assets.defaultProfile} alt="" />
+            <img src={image?URL.createObjectURL(image): assets.blank} alt="" />
           </label>
           <input onChange={(e)=>setImgage(e.target.files[0])} type="file" id="image" hidden required />
         </div>

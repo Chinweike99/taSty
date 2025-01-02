@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import styles from './NavBar.module.css'
-import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import { Link } from 'react-router-dom'

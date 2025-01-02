@@ -10,7 +10,7 @@ const addFood = async(req, res) => {
     let image_filename = `${req.file?.filename}`;
 
     if (!req.file) {
-        return res.status(400).json({ success: false, message: "No file uploaded." });
+        return res.json({ success: false, message: "Upload a file for your food." });
     }
 
     const food = new foodModel({
@@ -39,7 +39,7 @@ const foodList = async(req, res)=>{
  } catch (error) {
     console.log(error)
     res.json({message: error.message})
- }s
+ }
 }
 
 
@@ -62,10 +62,10 @@ const removeFood = async(req, res) => {
 
         //Delete the associated document.
         await foodModel.findByIdAndDelete(id);
-        res.json({message: "Food deleted"})
+        res.json({success: true, message: "Food deleted"})
     } catch (error) {
         console.log(error);
-        res.json({messag: error.message})
+        res.json({message: error.message})
     }
 }
 

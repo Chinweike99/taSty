@@ -9,7 +9,7 @@ const amountSeperator = new Intl.NumberFormat("en-US").format;
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const url = "http://localhost:3100";
-  const [tokens, setTokens] = useState("");
+  const [token, setTokens] = useState("");
 
   // const addTocart = () =>{
   //     setCartItems(cartItems + 1);
@@ -54,7 +54,7 @@ const StoreContextProvider = (props) => {
     delivery,
     amountSeperator,
     url,
-    tokens,
+    token,
     setTokens,
   };
   return (

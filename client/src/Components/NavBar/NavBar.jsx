@@ -9,7 +9,7 @@ import { assets } from '../../assets/assts';
 const NavBar = ({setShowlogin}) => {
     const [menu, setMenu] = useState("home")
     const[menuList, setMenuList] = useState(false);
-    const {totalCartAmount} = useContext(StoreContext);
+    const {totalCartAmount, token, setTokens} = useContext(StoreContext);
 
 
   return (
@@ -45,9 +45,13 @@ const NavBar = ({setShowlogin}) => {
                 
                 <div className={totalCartAmount() === 0 ? null : styles.dot}></div>
             </div>
-            {setShowlogin ? 
+            {!token ? 
             <button onClick={()=>setShowlogin(true)}>Sign in</button>
-            : <img src={assets.waiters} />}
+            : <div className={styles.userProfile}>
+                <img src={assets.waiters} />
+                <ul>Orders</ul>
+                <ul onClick={""}>Log out</ul>
+            </div>}
         </div>
     </div>
   )

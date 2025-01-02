@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import styles from "./Login.module.css";
 import DoDisturbIcon from "@mui/icons-material/DoDisturb";
-import { toast } from "react-toastify"
-import axios from "axios"
+import { toast } from "react-toastify";
+import axios from "axios";
 import { StoreContext } from "../../Context/StoreContext";
 
 const LoginPage = ({ setShowlogin }) => {
   const [current, setCurrent] = useState("Login");
-  const {url, setTokens} = useContext(StoreContext)
+  const { url, setTokens } = useContext(StoreContext);
   const [userData, setUserData] = useState({
     username: "",
     email: "",
     password: "",
-    confirmpassword: ""
+    confirmpassword: "",
   });
 
   const handleChange = (e) => {
@@ -22,19 +22,18 @@ const LoginPage = ({ setShowlogin }) => {
   };
   console.log(userData);
 
-  const submitData = async(e) => {
+  const submitData = async (e) => {
     e.preventDefault();
-    let newUrl = url
+    let newUrl = url;
 
-    // const formDetails = new FormData();
-    // formDetails.append("username", userData.username);
-    // formDetails.append("email", userData.email);
-    // formDetails.append("password", userData.password);
-
-    if (current === "Login"){
-      newUrl += "/api/user/login"
-    }else{
-      newUrl += "/api/user/register"
+    if (current === "Login") {
+      newUrl += "/api/user/login";
+      if (!userData.password) {
+        toast.error("Passwords is incorrect");
+        return;
+      }
+    } else {
+      newUrl += "/api/user/register";
       if (userData.password !== userData.confirmpassword) {
         toast.error("Passwords do not match");
         return;
@@ -42,19 +41,16 @@ const LoginPage = ({ setShowlogin }) => {
     }
 
     const response = await axios.post(`${newUrl}`, userData);
-    if(response.data.success){
-        setTokens(response.data.token);
-        localStorage.setItem("token", response.data.token);
-        toast.success(response.data.message);
-        setShowlogin(false)
-    }else{
+    if (response.data.success) {
+      setTokens(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      toast.success(response.data.message);
+      setShowlogin(false);
+    } else {
       // alert(response.data.message)
-        toast.error(response.data.message)
+      toast.error(response?.data?.message || "An error occurred.");
     }
-
-  }
-
-
+  };
 
   return (
     <div className={styles.login}>
@@ -67,7 +63,6 @@ const LoginPage = ({ setShowlogin }) => {
           <h2>{current}</h2>
         </div>
         <div className={styles.loginInputs}>
-
           {current === "Login" ? null : (
             <input
               type="text"
@@ -95,19 +90,21 @@ const LoginPage = ({ setShowlogin }) => {
             required
             onChange={handleChange}
           />
-          {current === "Login" ? null :(
+          {current === "Login" ? null : (
             <input
-                type="password"
-                placeholder="Confirm Password"
-                name="confirmpassword"
-                value={userData.confirmpassword}
-                required
-                onChange={handleChange}
+              type="password"
+              placeholder="Confirm Password"
+              name="confirmpassword"
+              value={userData.confirmpassword}
+              required
+              onChange={handleChange}
             />
-        )}
+          )}
         </div>
 
-        <button type="submit">{current === "Sign up" ? "Create account" : "Login"}</button>
+        <button type="submit">
+          {current === "Sign up" ? "Create account" : "Login"}
+        </button>
 
         {current !== "Login" ? (
           <div className={styles.loginCondition}>

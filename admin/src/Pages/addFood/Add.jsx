@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Add.module.css";
 import { assets } from "../../assets/assets";
-import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios"
@@ -52,9 +51,9 @@ const Add = ({listUrl}) => {
     }
  }
 
- useEffect(() => {
-    console.log(data)
- }, [data]);
+//  useEffect(() => {
+//     console.log(data)
+//  }, [data]);
 
 
   return (

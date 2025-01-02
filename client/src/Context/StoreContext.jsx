@@ -10,6 +10,7 @@ const amountSeperator = new Intl.NumberFormat('en-US').format;
 const StoreContextProvider = (props) => {
     
     const [cartItems, setCartItems] = useState({});
+    const url = "http://localhost:3100";
 
     // const addTocart = () =>{
     //     setCartItems(cartItems + 1);
@@ -47,7 +48,7 @@ const StoreContextProvider = (props) => {
     // }, [cartItems])
 
     const contextValue = {
-        foodList, cartItems, setCartItems, addTocart, removeFromCart, money, totalCartAmount,delivery,amountSeperator
+        foodList, cartItems, setCartItems, addTocart, removeFromCart, money, totalCartAmount,delivery,amountSeperator, url
     }
     return (
         <StoreContext.Provider value={contextValue}>

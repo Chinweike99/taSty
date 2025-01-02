@@ -3,10 +3,9 @@ import styles from "./List.module.css";
 import axios from "axios";
 import {toast }from 'react-toastify'
 
-const List = () => {
+const List = ({listUrl}) => {
   const [foodList, setFoodList] = useState([]);
   const amountSeperator = new Intl.NumberFormat('en-US').format;
-  const listUrl = "http://localhost:3100"; // Base URL for API
 
   // Function to fetch food list
   const getList = async () => {
@@ -25,16 +24,14 @@ const List = () => {
   };
 
   const deleteFood = async(foodId) =>{
-    console.log(foodId)
       const response = await axios.post(`${listUrl}/api/food/delete`, {id:foodId});
-
+      
       if(response.data.success){
         toast.success(response.data.message);
       }else{
         toast.error(response.data.message)
       }
-      await getList();
-     
+      await getList(); 
   }
 
 

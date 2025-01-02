@@ -11,6 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const App = () => {
+  const listUrl = "http://localhost:3100"
+
   return (
     <div>
       <ToastContainer position="top-right" autoClose={3000} style={{zIndex: "1001"}}/>
@@ -19,8 +21,8 @@ const App = () => {
       <div className='app'>
         <Sidebar />
         <Routes>
-          <Route path='/add' element={<Add />}/>
-          <Route path='/list' element={<List />}/>
+          <Route path='/add' element={<Add listUrl={listUrl}/>}/>
+          <Route path='/list' element={<List listUrl={listUrl}/>}/>
           <Route path='/orders' element={<Orders />}/>
         </Routes>
       </div>

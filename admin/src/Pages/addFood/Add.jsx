@@ -8,7 +8,7 @@ import axios from "axios"
 import { toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 
-const Add = () => {
+const Add = ({listUrl}) => {
  const [image, setImgage] = useState(false)
  const [data, setData] = useState({
     name: "",
@@ -26,7 +26,6 @@ const Add = () => {
  // API to submit data to backend
  // FormData: primarily used for sending form data via HTTP requests, especially when working with file uploads.
  const handleSubmit = async(e) => {
-    const addFoodUrl = "http://localhost:3100"
 
     e.preventDefault();
     const formData = new FormData();
@@ -36,11 +35,8 @@ const Add = () => {
     formData.append("price", data.price);
     formData.append("image", image)
 
-    // if(!image){
-    //   toast.error(success.message)
-    // }
-
-    const sendData = await axios.post(`${addFoodUrl}/api/food/add`, formData);
+    
+    const sendData = await axios.post(`${listUrl}/api/food/add`, formData);
     if(sendData.data.success){
       setData({
         name: "",

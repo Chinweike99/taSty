@@ -4,7 +4,7 @@
 
 
 .foodList{
-    margin-left: 16%;
+    margin-left: 17%;
     z-index: 2;
     width: 100%;
 }
@@ -40,4 +40,20 @@
     color: red;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 850px) {
+    .listTitle{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .listTable img{
+        width: 4rem;
+        height: 7rem;
+        cursor: pointer;
+        transition: 0.5s;
+    }
 }

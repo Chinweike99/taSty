@@ -36,3 +36,8 @@
 .listTable img:hover{
     transform: scale(1.08);
 }
+.action{
+    color: red;
+    font-size: 1.1rem;
+    cursor: pointer;
+}

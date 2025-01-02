@@ -24,6 +24,20 @@ const List = () => {
     }
   };
 
+  const deleteFood = async(foodId) =>{
+    console.log(foodId)
+      const response = await axios.post(`${listUrl}/api/food/delete`, {id:foodId});
+
+      if(response.data.success){
+        toast.success(response.data.message);
+      }else{
+        toast.error(response.data.message)
+      }
+      await getList();
+     
+  }
+
+
   useEffect(() => {
     getList();
   }, []);
@@ -47,7 +61,7 @@ const List = () => {
               <p>{food.category}</p>
               {/* <p>{food.description}</p> */}
               <p>₦ {amountSeperator(food.price)}</p>
-              <p>X</p>
+              <p onClick={()=>deleteFood(food._id)} className={styles.action}>X</p>
             </div>
           );
         })

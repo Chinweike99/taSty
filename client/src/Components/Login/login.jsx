@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import { toast } from "react-toastify";
@@ -52,6 +52,14 @@ const LoginPage = ({ setShowlogin }) => {
     }
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setShowlogin(false); // Automatically close the login page if logged in
+    }
+  }, [setShowlogin]);
+
+  
   return (
     <div className={styles.login}>
       <form className={styles.loginContainer} onSubmit={submitData}>

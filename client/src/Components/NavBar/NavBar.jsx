@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import styles from './NavBar.module.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext';
 import { assets } from '../../assets/assts';
 
@@ -10,6 +10,13 @@ const NavBar = ({setShowlogin}) => {
     const [menu, setMenu] = useState("home")
     const[menuList, setMenuList] = useState(false);
     const {totalCartAmount, token, setTokens} = useContext(StoreContext);
+    const navigate = useNavigate();
+
+    const logout = () =>{
+        localStorage.removeItem("token");
+        setTokens("");
+        navigate("/")
+    }
 
 
   return (
@@ -49,8 +56,10 @@ const NavBar = ({setShowlogin}) => {
             <button onClick={()=>setShowlogin(true)}>Sign in</button>
             : <div className={styles.userProfile}>
                 <img src={assets.waiters} />
-                <ul>Orders</ul>
-                <ul onClick={""}>Log out</ul>
+                <ul className={styles.navProfile}>
+                    <li>Orders</li>
+                    <li onClick={logout}>Logout</li>
+                </ul>
             </div>}
         </div>
     </div>

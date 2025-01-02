@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import { Link } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext';
+import { assets } from '../../assets/assts';
 
 const NavBar = ({setShowlogin}) => {
     const [menu, setMenu] = useState("home")
@@ -44,7 +45,9 @@ const NavBar = ({setShowlogin}) => {
                 
                 <div className={totalCartAmount() === 0 ? null : styles.dot}></div>
             </div>
+            {setShowlogin ? 
             <button onClick={()=>setShowlogin(true)}>Sign in</button>
+            : <img src={assets.waiters} />}
         </div>
     </div>
   )

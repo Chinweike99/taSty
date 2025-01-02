@@ -7,11 +7,12 @@ import { StoreContext } from "../../Context/StoreContext";
 
 const LoginPage = ({ setShowlogin }) => {
   const [current, setCurrent] = useState("Login");
-  const {url} = useContext(StoreContext)
+  const {url, setTokens} = useContext(StoreContext)
   const [userData, setUserData] = useState({
     username: "",
     email: "",
     password: "",
+    confirmpassword: ""
   });
 
   const handleChange = (e) => {
@@ -22,24 +23,33 @@ const LoginPage = ({ setShowlogin }) => {
   console.log(userData);
 
   const submitData = async(e) => {
-    // const url = "http://localhost:3100"
     e.preventDefault();
+    let newUrl = url
 
-    const formDetails = new FormData();
-    formDetails.append("username", userData.username);
-    formDetails.append("email", userData.email);
-    formDetails.append("password", userData.password);
+    // const formDetails = new FormData();
+    // formDetails.append("username", userData.username);
+    // formDetails.append("email", userData.email);
+    // formDetails.append("password", userData.password);
 
-    const registerUser = await axios.post(`${url}/api/user/register`, formDetails);
-    if(registerUser.data.successful){
-        setUserData({
-            username: "",
-            email: "",
-            password: ""
-        });
-        toast.success(registerUser.data.message)
+    if (current === "Login"){
+      newUrl += "/api/user/login"
     }else{
-        toast.error(registerUser.data.message)
+      newUrl += "/api/user/register"
+      if (userData.password !== userData.confirmpassword) {
+        toast.error("Passwords do not match");
+        return;
+      }
+    }
+
+    const response = await axios.post(`${newUrl}`, userData);
+    if(response.data.success){
+        setTokens(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        toast.success(response.data.message);
+        setShowlogin(false)
+    }else{
+      // alert(response.data.message)
+        toast.error(response.data.message)
     }
 
   }
@@ -89,7 +99,7 @@ const LoginPage = ({ setShowlogin }) => {
             <input
                 type="password"
                 placeholder="Confirm Password"
-                name="Confirm password"
+                name="confirmpassword"
                 value={userData.confirmpassword}
                 required
                 onChange={handleChange}

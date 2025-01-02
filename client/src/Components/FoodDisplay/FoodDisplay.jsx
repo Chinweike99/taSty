@@ -13,11 +13,11 @@ const FoodDisplay = ({category}) => {
         <div className={styles.foodlists}>
             {
                 foodList.map((food, index) => {
-                    {console.log(category, food.category)}
+                    // {console.log(category, food.category)}
                     if(category === "All" || category === food.category){
                         return(
-                            <div>
-                                <FoodItem key={index} id={food._id} name={food.name} price={food.price} image={food.image} description={food.description} />
+                            <div key={index}>
+                                <FoodItem id={food._id} name={food.name} price={food.price} image={food.image} description={food.description} />
                             </div>
                         )
                     }

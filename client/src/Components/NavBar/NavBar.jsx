@@ -13,6 +13,7 @@ const NavBar = ({setShowlogin}) => {
     const navigate = useNavigate();
 
     const logout = () =>{
+        setShowlogin(false);
         localStorage.removeItem("token");
         setTokens("");
         navigate("/")

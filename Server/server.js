@@ -4,7 +4,7 @@ import { connectDB } from './configurations/DB.js';
 import foodRouter from './Routes/foodRoutes.js';
 import userRouter from './Routes/userRoute.js';
 import "dotenv/config"
-// Second line: retryWrites=true&w=majority&appName=Cluster0
+import cartRouter from './Routes/cartRoute.js';
 
 //Database connection
 connectDB();
@@ -23,6 +23,7 @@ app.use("/images", express.static('uploads'));
 
 // user api
 app.use("/api/user", userRouter);
+app.use("/api/cart", cartRouter);
 
 
 app.get('/', (req, res) => {

@@ -1,35 +1,34 @@
-import express from 'express';
-import cors from 'cors'
-import { connectDB } from './configurations/DB.js';
-import foodRouter from './Routes/foodRoutes.js';
-import userRouter from './Routes/userRoute.js';
-import "dotenv/config"
-import cartRouter from './Routes/cartRoute.js';
+import express from "express";
+import cors from "cors";
+import { connectDB } from "./configurations/DB.js";
+import foodRouter from "./Routes/foodRoutes.js";
+import userRouter from "./Routes/userRoute.js";
+import "dotenv/config";
+import cartRouter from "./Routes/cartRoute.js";
 
 //Database connection
 connectDB();
 
 //app config
 const app = express();
-const PORT = 3100
+const PORT = 3100;
 
 //middleware
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
 // api endpoints
-app.use("/api/food", foodRouter)
-app.use("/images", express.static('uploads'));
+app.use("/api/food", foodRouter);
+app.use("/images", express.static("uploads"));
 
 // user api
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to tasty foods 😋 \n what can we serve you?");
+});
 
-app.get('/', (req, res) => {
-    res.send("Welcome to tasty foods 😋 \n what can we serve you?")
-})
-
-app.listen(PORT, ()=>{
-    console.log(`Server running on port http://localhost:${PORT}`)
-})
+app.listen(PORT, () => {
+  console.log(`Server running on port http://localhost:${PORT}`);
+});

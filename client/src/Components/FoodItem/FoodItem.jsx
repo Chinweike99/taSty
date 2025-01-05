@@ -31,15 +31,6 @@ const FoodItem = ({id, name, image,price, description, category}) => {
         <div className={styles.imageContainer}>
           <img src={url+"/images/"+image} alt="food-Image" />
 
-          {/* {
-            !itemCount ? <button  onClick={()=>setCount(prev=>prev + 1)}>Add</button> 
-            : <div>
-              <RemoveIcon className={styles.remove} onClick={()=>setCount(prev=>prev-1)}/>
-              <p>{itemCount <= 1 ? `${itemCount} Portion` : `${itemCount} Portions`}</p>
-              <AddIcon className={styles.add} onClick={()=>setCount(prev=>prev+1)}/>
-            </div>
-          } */}
-
           { // To get a specific food Id, this functionality works
             !cartItems[id] ? <button  onClick={()=>addTocart(id)}>Add</button> 
             : <div>

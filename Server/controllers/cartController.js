@@ -6,15 +6,11 @@ const addTocart = async (req, res) => {
   try {
     let userData = await userModel.findOne({ _id: req.body.userId });
     let cartData = (await userData.cartData) || {};
-    if (!cartData[req.body.itemId]) {
-      cartData[req.body.itemId] = 1;
+    if (!cartData[req.body.foodId]) {
+      cartData[req.body.foodId] = 1;
     } else {
-      cartData[req.body.itemId] += 1;
+      cartData[req.body.foodId] += 1;
     }
-    // console.log("Food ID:", req.body.itemId);
-    // console.log("User Data:", userData);
-    // console.log("Cart Data:", cartData);
-    // console.log("Food ID from request body:", req.body.itemId);
 
     await userModel.findByIdAndUpdate(req.body.userId, { cartData });
     await userData.save();
@@ -24,6 +20,29 @@ const addTocart = async (req, res) => {
     res.json({ success: false, message: "Unable to add food to cart" });
   }
 };
+
+// const addTocart = async (req, res) => {
+//   try {
+//     const { userId, foodId } = req.body;
+
+//     if (!userId || !foodId) {
+//       return res.status(400).json({ success: false, message: "Invalid data" });
+//     }
+
+//     const userData = await userModel.findOne({ _id: userId });
+//     const cartData = userData.cartData || {};
+
+//     cartData[foodId] = (cartData[foodId] || 0) + 1;
+
+//     await userModel.findByIdAndUpdate(userId, { cartData });
+//     return res.json({ success: true, message: "Added to cart" });
+//   } catch (error) {
+//     console.error("Error adding to cart:", error);
+//     res.status(500).json({ success: false, message: "Unable to add food to cart" });
+//   }
+// };
+
+
 
 // Function to remove from cart
 const removeFromCart = async (req, res) => {

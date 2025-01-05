@@ -11,10 +11,10 @@ const addTocart = async (req, res) => {
     } else {
       cartData[req.body.itemId] += 1;
     }
-    console.log("Food ID:", req.body.itemId);
-    console.log("User Data:", userData);
-    console.log("Cart Data:", cartData);
-    console.log("Food ID from request body:", req.body.itemId);
+    // console.log("Food ID:", req.body.itemId);
+    // console.log("User Data:", userData);
+    // console.log("Cart Data:", cartData);
+    // console.log("Food ID from request body:", req.body.itemId);
 
     await userModel.findByIdAndUpdate(req.body.userId, { cartData });
     await userData.save();

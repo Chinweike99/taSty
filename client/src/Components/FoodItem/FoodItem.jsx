@@ -5,12 +5,26 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { StoreContext } from '../../Context/StoreContext';
+import axios from 'axios';
+import {toast} from "react-toastify"
 
 
 
 const FoodItem = ({id, name, image,price, description, category}) => {
   // const [itemCount, setCount] = useState(0);
   const {cartItems, money, addTocart, removeFromCart, url} = useContext(StoreContext);
+
+  // const addTofoodList = async(e)=>{
+  //   e.preventDefault();
+  //   try {
+  //     const getFood = await axios.post(`${url}/api/user/addtocart`);
+  //     if(getFood.data.success){
+  //       toast.success("Added")
+  //     }
+  //   } catch (error) {
+      
+  //   }
+  // }
 
   return (
     <div className={styles.foodItem}>

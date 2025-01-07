@@ -34,7 +34,6 @@ const Add = ({listUrl}) => {
     formData.append("price", data.price);
     formData.append("image", image)
 
-    
     const sendData = await axios.post(`${listUrl}/api/food/add`, formData);
     if(sendData.data.success){
       setData({

@@ -12,6 +12,8 @@ const addTocart = async (req, res) => {
       cartData[req.body.foodId] += 1;
     }
 
+    console.log("Request Body:", req.body);
+
     await userModel.findByIdAndUpdate(req.body.userId, { cartData });
     await userData.save();
     res.json({ success: true, message: "Added to cart" });
@@ -24,23 +26,29 @@ const addTocart = async (req, res) => {
 // const addTocart = async (req, res) => {
 //   try {
 //     const { userId, foodId } = req.body;
-
+    
 //     if (!userId || !foodId) {
-//       return res.status(400).json({ success: false, message: "Invalid data" });
+//       return res.status(400).json({ success: false, message: "userId and foodId are required" });
 //     }
 
-//     const userData = await userModel.findOne({ _id: userId });
-//     const cartData = userData.cartData || {};
+//     let userData = await userModel.findOne({ _id: userId });
+//     if (!userData) {
+//       return res.status(404).json({ success: false, message: "User not found" });
+//     }
 
+//     let cartData = userData.cartData || {}; // Ensure cartData is initialized
 //     cartData[foodId] = (cartData[foodId] || 0) + 1;
 
-//     await userModel.findByIdAndUpdate(userId, { cartData });
-//     return res.json({ success: true, message: "Added to cart" });
+//     userData.cartData = cartData;
+//     await userData.save();
+
+//     res.json({ success: true, message: "Added to cart", cartData });
 //   } catch (error) {
-//     console.error("Error adding to cart:", error);
+//     console.error("Error in addTocart:", error);
 //     res.status(500).json({ success: false, message: "Unable to add food to cart" });
 //   }
 // };
+
 
 
 

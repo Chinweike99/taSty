@@ -20,7 +20,7 @@ const LoginPage = ({ setShowlogin }) => {
     const value = e.target.value;
     setUserData((data) => ({ ...data, [name]: value }));
   };
-  console.log(userData);
+  // console.log(userData);
 
   const submitData = async (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const LoginPage = ({ setShowlogin }) => {
         return;
       }
     }
-
+    
     const response = await axios.post(`${newUrl}`, userData);
     if (response.data.success) {
       setTokens(response.data.token);

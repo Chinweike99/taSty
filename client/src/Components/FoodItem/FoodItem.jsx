@@ -10,21 +10,9 @@ import {toast} from "react-toastify"
 
 
 
-const FoodItem = ({id, name, image,price, description, category}) => {
+const FoodItem = ({id, name, image,price, description}) => {
   // const [itemCount, setCount] = useState(0);
   const {cartItems, money, addTocart, removeFromCart, url} = useContext(StoreContext);
-
-  // const addTofoodList = async(e)=>{
-  //   e.preventDefault();
-  //   try {
-  //     const getFood = await axios.post(`${url}/api/user/addtocart`);
-  //     if(getFood.data.success){
-  //       toast.success("Added")
-  //     }
-  //   } catch (error) {
-      
-  //   }
-  // }
 
   return (
     <div className={styles.foodItem}>
@@ -32,8 +20,8 @@ const FoodItem = ({id, name, image,price, description, category}) => {
           <img src={url+"/images/"+image} alt="food-Image" />
 
           { // To get a specific food Id, this functionality works
-            !cartItems[id] ? <button  onClick={()=>addTocart(id)}>Add</button> 
-            : <div>
+            !cartItems[id] ? ( <button  onClick={()=>addTocart(id)}>Add</button> 
+          ) : <div>
               <RemoveIcon className={styles.remove} onClick={()=>removeFromCart(id)}/>
                 <p>{cartItems[id] < 2 ? `${cartItems[id]} Portion` : `${cartItems[id]} Portions`}</p>
               <AddIcon className={styles.add} onClick={()=>addTocart(id)}/>

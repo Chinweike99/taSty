@@ -23,34 +23,6 @@ const addTocart = async (req, res) => {
   }
 };
 
-// const addTocart = async (req, res) => {
-//   try {
-//     const { userId, foodId } = req.body;
-    
-//     if (!userId || !foodId) {
-//       return res.status(400).json({ success: false, message: "userId and foodId are required" });
-//     }
-
-//     let userData = await userModel.findOne({ _id: userId });
-//     if (!userData) {
-//       return res.status(404).json({ success: false, message: "User not found" });
-//     }
-
-//     let cartData = userData.cartData || {}; // Ensure cartData is initialized
-//     cartData[foodId] = (cartData[foodId] || 0) + 1;
-
-//     userData.cartData = cartData;
-//     await userData.save();
-
-//     res.json({ success: true, message: "Added to cart", cartData });
-//   } catch (error) {
-//     console.error("Error in addTocart:", error);
-//     res.status(500).json({ success: false, message: "Unable to add food to cart" });
-//   }
-// };
-
-
-
 
 // Function to remove from cart
 const removeFromCart = async (req, res) => {

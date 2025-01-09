@@ -106,7 +106,7 @@ const StoreContextProvider = (props) => {
     async function loadData() {
       await fetchFood();
   
-      const savedToken = localStorage.getItem("token");
+      const savedToken = (localStorage.getItem("token"));
       if (savedToken) {
         setTokens(savedToken);
         try {

@@ -1,9 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './PlaceOrder.module.css'
 import { StoreContext } from '../../Context/StoreContext'
+import axios from 'axios';
+import {toast} from 'react-toastify'
 
 const PlaceOrder = () => {
-  const {foodList, cartItems, url, money, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext);
+  const {foodList, cartItems, token, url, money, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext);
 
   const [data, setData] = useState({
     firstName: "",
@@ -21,10 +23,43 @@ const PlaceOrder = () => {
     setData(data=>({...data, [name]: value}))
  }
 
+ const placeOrder = async(e) => {
+  e.preventDefault();
+  let orderedItems = [];
+  foodList.map((item)=>{
+    if(cartItems[item._id] > 0){
+      let itemInfo = item;
+      itemInfo["quantity"] = cartItems[item._id];
+      orderedItems.push(itemInfo);
+    }
+  })
+  console.log(orderedItems);
+  let orderData = {
+    address: data,
+    items: orderedItems,
+    amount: totalCartAmount() + 1000
+  }
+  let response = await axios.post(url+"/api/order/place", orderData, { headers: { Authorization: `Bearer ${token}` } });
+  if(response.data.success){
+    const {session_url} = response.data;
+    window.location.replace(session_url);
+    // window.location.href(session_url);
+  }else{
+    toast.error("Error making order")
+  }
+  console.log("Order data is: ", orderData);
+ }
+
+
+
+//  useEffect(()=>{
+//   console.log(data);
+//  }, [])
+
 
   return (
     <div className={styles.placeOrder}>
-      <form>
+      <form onSubmit={placeOrder}>
         <div className={styles.placeOrderLeft}>
           <h2>Delivery details ..</h2>
           <div>
@@ -67,7 +102,7 @@ const PlaceOrder = () => {
                 <p className={styles.totalPrice} style={{fontSize: "1.4rem"}}><b>{money} {amountSeperator (totalCartAmount() + delivery)}</b></p>
               </div>
             </div>
-            <button>Make payment</button>
+            <button type='submit'>Make payment</button>
 
           </div>
         </div>

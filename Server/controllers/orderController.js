@@ -8,7 +8,7 @@ import Stripe from "stripe"
 const stripeKey = new Stripe (process.env.STRIPE_KEY);
 const placeOrder = async (req, res) =>{
 
-    const frontEndUrl = "http://localhost:5173"
+    const frontEndUrl = "http://localhost:3000"
 
     try {
         const newOrder = new orderModel({
@@ -27,7 +27,7 @@ const placeOrder = async (req, res) =>{
                 productData:{
                     name: item.name
                 },
-                unitAmount: item.price*100*80
+                unitAmount: item.price*100*1500
             },
             quantity: item.quantity
         }))
@@ -38,7 +38,7 @@ const placeOrder = async (req, res) =>{
                 productData: {
                     name: "Delivery fee"
                 },
-                unitAmount: 2*100*80
+                unitAmount: 2*100*1500
             },
             quantity: 1
         });
@@ -53,7 +53,7 @@ const placeOrder = async (req, res) =>{
 
     } catch (error) {
         console.log(error.message);
-        res.json({success: false, message: error.message})
+        res.json({success: false, message:`Your error is ${error.message}`})
     }
 }
 

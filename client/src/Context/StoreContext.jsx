@@ -27,10 +27,8 @@ const StoreContextProvider = (props) => {
           { userId, foodId },
           { headers: { Authorization: `Bearer ${token}` } }
         )
-        .then(console.log(token));
+        
     }
-    // console.log(cartItems);
-    // console.log(foodId);
   };
 
   /**
@@ -88,18 +86,6 @@ const StoreContextProvider = (props) => {
   };
 
 
-  // useEffect(()=> {
-  //   async function loadData(){
-  //     await fetchFood();
-  //     if(localStorage.getItem("token")){
-  //       setTokens(localStorage.getItem("token"));
-  //       await getCartData(localStorage.getItem("token"))
-  //     }
-  //   }
-  //   loadData();
-  // }, [])
-
-
   useEffect(() => {
     async function loadData() {
       await fetchFood();
@@ -119,6 +105,7 @@ const StoreContextProvider = (props) => {
     }
     loadData();
   }, []);
+  
   
 
   const contextValue = {

@@ -39,7 +39,7 @@ const Add = ({listUrl}) => {
       setData({
         name: "",
         description: "",
-        category: "Nigerian",
+        category: "",
         price: ""
      })
       setImgage(false);
@@ -99,11 +99,11 @@ const Add = ({listUrl}) => {
               <select name="category"  onChange={handleChange} value={data.category}>
                 {/* <option >Choose category</option>
                 <option value="All">All</option> */}
-                <option value="Nigerian"> Nigerian delicacies</option>
+                <option value="Nigerian-delicacies"> Nigerian delicacies</option>
                 <option value="Inter-continental">
                   Inter-continental foods
                 </option>
-                <option value="Snacks">Snacks</option>
+                <option value="Snack">Snacks</option>
               </select>
             </div>
 

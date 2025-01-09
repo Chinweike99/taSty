@@ -29,8 +29,8 @@ const StoreContextProvider = (props) => {
         )
         .then(console.log(token));
     }
-    console.log(cartItems);
-    console.log(foodId);
+    // console.log(cartItems);
+    // console.log(foodId);
   };
 
   /**
@@ -57,7 +57,6 @@ const StoreContextProvider = (props) => {
           (food) => food._id === i || food._id === Number(i)
         );
         totalAmount += iInfo.price * cartItems[i];
-        console.log("cartItems in context:", cartItems);
       }
     }
     return totalAmount;
@@ -79,7 +78,6 @@ const StoreContextProvider = (props) => {
         { userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log("Response from getCartData:", response.data);
       setCartItems(response.data.cartData || {});
     } catch (error) {
       console.error(

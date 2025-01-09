@@ -1,9 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './PlaceOrder.module.css'
 import { StoreContext } from '../../Context/StoreContext'
 
 const PlaceOrder = () => {
-  const {foodList, cartItems, money, removeFromCart, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext)
+  const {foodList, cartItems, url, money, totalCartAmount,delivery, amountSeperator} = useContext(StoreContext);
+
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    location: "",
+    city: "",
+    state: "",
+    phone: ""
+  });
+
+  const handleChange = (e)=>{
+    const name = e.target.name;
+    const value = e.target.value;
+    setData(data=>({...data, [name]: value}))
+ }
 
 
   return (
@@ -12,22 +28,22 @@ const PlaceOrder = () => {
         <div className={styles.placeOrderLeft}>
           <h2>Delivery details ..</h2>
           <div>
-            <input type="text" placeholder='First name' required/>
-            <input type="text" placeholder='Last name' required/>
+            <input type="text" name='firstName' value={data.firstName} onChange={handleChange} placeholder='First name' required/>
+            <input type="text" name='lastName' value={data.lastName} onChange={handleChange} placeholder='Last name' required/>
           </div>
-          <input type="email"  placeholder='Email address' required/>
+          <input type="email" name='email' value={data.email} onChange={handleChange}   placeholder='Email address' required/>
         
           <div>
-            <input type="text"  placeholder='Location Address' required/>
-            <input type="text" placeholder='City' required/>
+            <input type="text" name='location' value={data.location} onChange={handleChange}  placeholder='Location Address' required/>
+            <input type="text" name='city' value={data.city} onChange={handleChange} placeholder='City' required/>
           </div>
           {/* <div>
             <input type="text" placeholder='Zip code'/>
             <input type="text" placeholder='Country'/>
           </div> */}
           <div>
-            <input type="text" placeholder='State' required/>
-            <input type="number" placeholder='Phone' required/>
+            <input type="text" name='state' value={data.state} onChange={handleChange} placeholder='State' required/>
+            <input type="number" name='phone' value={data.phone} onChange={handleChange} placeholder='Phone' required/>
           </div>
         </div>
 
